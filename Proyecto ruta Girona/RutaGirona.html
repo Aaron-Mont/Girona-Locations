@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ruta Girona</title>
+        <style>
+            #fotos {
+                display: none;
+            }
+        </style>
+        <script src="./index.js"></script>
+    </head>
+
+    <body>
+        <section id="button">
+
+            <label for="poblacion">Introduce la población:</label>
+            <input list="poblaciones" id="poblacion" name="poblacion" autocomplete="off">
+            <button onclick="obtenerTexto()">Buscar</button>
+  
+        <datalist id="poblaciones">
+                <option value="Banyoles">
+                <option value="Begur">
+                <option value="Besalú">
+                <option value="Blanes">
+                <option value="Cadaqués">
+                <option value="Calonge">
+                <option value="Castell-Platja d'Aro">
+                <option value="Figueres">
+                <option value="Girona">
+                <option value="L'Escala">
+                <option value="Llançà">
+                <option value="Lloret de Mar">
+                <option value="Olot">
+                <option value="Palafrugell">
+                <option value="Palamós">
+                <option value="Pals">
+                <option value="Puigcerdà">
+                <option value="Roses">
+                <option value="Salt">
+                <option value="Sant Antoni de Calonge">
+                <option value="Sant Feliu de Guíxols">
+                <option value="Santa Coloma de Farners">
+                <option value="Sarrià de Ter">
+                <option value="Torroella de Montgrí">
+                <option value="Tossa de Mar">
+         </datalist>
+        </section>
+
+        <section id="fotos">
+            <img src="./mdi/norte.png" alt="Norte" id="fotoNorte">
+            <img src="./mdi/sur.png" alt="Sur" id="fotoSur">
+        </section>
+
+        <section id="seccion-mensaje">
+              <p id="mensaje"> <span id="localidad"></span>  <span id="zona"></span></p>
+        </section>
+
+    </body>
+    
+   
+</html>
