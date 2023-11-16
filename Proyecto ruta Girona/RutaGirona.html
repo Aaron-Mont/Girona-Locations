@@ -18,10 +18,36 @@
     let zona = ""
 
 
-    if (poblacionDefinida === "Begur" || poblacionDefinida === "Cadaqués" || poblacionDefinida === "Llançà"|| poblacionDefinida === "Girona" ) {
-        zona = "Norte";
-    } else if (poblacionDefinida === "Blanes" || poblacionDefinida === "Lloret de Mar" || poblacionDefinida === "Tossa de Mar"|| poblacionDefinida === "Tordera" || poblacionDefinida === "Arbucies") {
-        zona = "Sur";
+    if (
+    poblacionDefinida === "Begur" ||
+    poblacionDefinida === "Cadaqués" ||
+    poblacionDefinida === "Llançà" ||
+    poblacionDefinida === "Girona" ||
+    poblacionDefinida === "Amer" ||
+    poblacionDefinida === "Bellcaire d'Empordà" ||
+    poblacionDefinida === "Celrá" ||
+    poblacionDefinida === "La Jonquera" ||
+    poblacionDefinida === "La Bisbal d'Empordà" ||
+    poblacionDefinida === "Sant Sadurní de l'Heura" ||
+    poblacionDefinida === "Sant Joan de Mollet" ||
+    poblacionDefinida === "Palau-saverdera" ||
+    poblacionDefinida === "Vilajuiga" ||
+    poblacionDefinida === "Roses" ||
+    poblacionDefinida === "Peralada" ||
+    poblacionDefinida === "Figueres" ||
+    poblacionDefinida === "Banyoles" ||
+    poblacionDefinida === "Cornellà del Terri" ||
+    poblacionDefinida === "Sant Gregori" ||
+    poblacionDefinida === "Salt" ||
+    poblacionDefinida === "Torroella de Montgrí" ||
+    poblacionDefinida === "La Pera" ||
+    poblacionDefinida === "Pals"
+) {
+    zona = "Norte";
+
+
+    } else  {
+        zona = "Sur"
     } 
 
     let parrafo = document.getElementById("mensaje")
@@ -39,31 +65,50 @@
             <button onclick="obtenerTexto()">Buscar</button>
   
         <datalist id="poblaciones">
-                <option value="Banyoles">
-                <option value="Begur">
-                <option value="Besalú">
-                <option value="Blanes">
-                <option value="Cadaqués">
-                <option value="Calonge">
-                <option value="Castell-Platja d'Aro">
-                <option value="Figueres">
-                <option value="Girona">
-                <option value="L'Escala">
-                <option value="Llançà">
-                <option value="Lloret de Mar">
-                <option value="Olot">
-                <option value="Palafrugell">
-                <option value="Palamós">
-                <option value="Pals">
-                <option value="Puigcerdà">
-                <option value="Roses">
-                <option value="Salt">
-                <option value="Sant Antoni de Calonge">
-                <option value="Sant Feliu de Guíxols">
-                <option value="Santa Coloma de Farners">
-                <option value="Sarrià de Ter">
-                <option value="Torroella de Montgrí">
-                <option value="Tossa de Mar">
+            <option value="Amer">
+            <option value="Arbúcies">
+            <option value="Bellcaire d'Empordà">
+            <option value="Banyoles">
+            <option value="Blanes">
+            <option value="Calonge">
+            <option value="Cassà de la Selva">
+            <option value="Castell d'Aro">
+            <option value="Celrá">
+            <option value="Corçà">
+            <option value="Cornellà del Terri">
+            <option value="Figueres">
+            <option value="Fornells de la Selva">
+            <option value="Hostalric">
+            <option value="La Bisbal d'Empordà">
+            <option value="La Jonquera">
+            <option value="La Pera">
+            <option value="Llançà">
+            <option value="Lloret de Mar">
+            <option value="Mont-ras">
+            <option value="Palafrugell">
+            <option value="Palamós">
+            <option value="Palau-saverdera">
+            <option value="Pals">
+            <option value="Peralada">
+            <option value="Riells y Viabrea">
+            <option value="Roses">
+            <option value="Sant Feliu de Guíxols">
+            <option value="Sant Gregori">
+            <option value="Sant Joan de Mollet">
+            <option value="Sant Sadurní de l'Heura ">
+            <option value="Santa Coloma de Farners">
+            <option value="Santa Cristina de Aro">
+            <option value="Santa Coloma de Farners">
+            <option value="Tordera">
+            <option value="Torroella de Montgrí">
+            <option value="Tossa de Mar">
+            <option value="Ullastret">
+            <option value="Vall-llobrega">
+            <option value="Vidreres">
+            <option value="Vilajuiga">
+            <option value="Salt">
+        </datalist>
+                
          </datalist>
         </section>
 
