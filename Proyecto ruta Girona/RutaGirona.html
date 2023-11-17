@@ -4,7 +4,74 @@
     <head>
         <meta charset="utf-8">
         <title>Ruta Girona</title>
-        <link rel="stylesheet" href="./styles.css">
+        <styles>@import url('https://fonts.cdnfonts.com/css/kronika');
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.blinking-image {
+    animation: blink 1s infinite;
+  }
+
+
+body {
+    background-color: rgb(130, 130, 235);
+  }
+#button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-family: inherit;
+    font-size: 24px;
+    margin-top: 30px;
+
+}
+
+#fotos {
+    display: flex;
+    justify-content: center;
+    flex-direction: block;
+    align-items: center;
+    gap: 10px;
+}
+
+#seccion-mensaje {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kronika', sans-serif;
+    font-size: 24px;
+    margin-top: -3%;
+}
+
+#mapaSur {
+    overflow: hidden;
+    position: relative;
+    border: 2px outset blueviolet;
+    border-radius: 15px;
+    width: 25%;
+}
+
+#mapaSur img {
+
+    display: block;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+#mapaSur:hover img {
+  transform: scale(1.4); /* Puedes ajustar el valor según tu preferencia */
+}
+
+#letras-Girona {
+    font-family: 'Kronika', sans-serif;
+    font-size: 50px;
+}</styles>
         <script>
     function obtenerTexto() {
                 
