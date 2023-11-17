@@ -49,6 +49,7 @@ body {
     border: 2px outset blueviolet;
     border-radius: 15px;
     width: 25%;
+    margin-top: -8%;
 }
 
 #mapaSur img {
