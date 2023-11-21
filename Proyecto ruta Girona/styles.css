@@ -12,7 +12,7 @@
 
 
 body {
-    background-image: url("./mdi/fondoBody.png")
+    background-image: url("./mdi/fondoBody.png");
     background-repeat: no-repeat;
     background-size: cover;
   }
