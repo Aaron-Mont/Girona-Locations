@@ -38,14 +38,14 @@ body {
 }
 
 #mapaSur {
-    
-}
-
-#mapaSur img {
     overflow: hidden;
     border: 2px outset blueviolet;
     border-radius: 15px;
     width: 25%;
+}
+
+#mapaSur img {
+    
     margin-top: -8%;
     height: auto;
     transition: transform 0.3s ease-in-out;
