@@ -22,8 +22,8 @@ body {
     align-items: center;
   }
 #button {
-
-  border: 3px solid;
+  border-radius: 6%;
+  border: 5px solid;
   width: 31%;
   height: 100%;
   background-color: aliceblue;
