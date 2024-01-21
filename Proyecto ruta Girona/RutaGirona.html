@@ -5,258 +5,50 @@
         <meta charset="utf-8">
         <title>Ruta Girona</title>
         <link rel="stylesheet" href="./styles.css">
-        <script src="./scripts.js"></script>
     </head>
 
     <body>
-        
+
+        <section id="contenedor-principal">
+            <span><img src="./mdi/proquibsa.jpg" alt=""></span>
         <section id="button">
 
-            <label for="poblacion">Introduce la población:</label>
+            <label class="input-text" for="poblacion">Introduce la población:</label>
             <input list="poblaciones" id="poblacion" name="poblacion" autocomplete="off">
-            <button onclick="obtenerTexto()">Buscar</button>
+            <button class="button" onclick="obtenerTexto()">Buscar</button>
+            <button class="button" onclick="crearListaVisual()">Crear lista</button>
   
         <datalist id="poblaciones">
-            <option value="Agullana"> 
-                <option value="Aiguaviva">
-                <option value="Albanyà">
-                <option value="Albons">
-                <option value="Alp">
-                <option value="Amer">
-                <option value="Anglès">
-                <option value="Arbúcies">
-                <option value="Argelaguer">
-                <option value="Armentera">
-                <option value="Avinyonet de Puigventós">
-                <option value="Banyoles">
-                <option value="Bàscara">
-                <option value="Begur">
-                <option value="Bellcaire d'Empordà">
-                <option value="Besalú">
-                <option value="Bescanó">
-                <option value="Beuda">
-                <option value="Biure">
-                <option value="Blanes">
-                <option value="Boadella i les Escaules">
-                <option value="Bolvir">
-                <option value="Bordils">
-                <option value="Borrassà">
-                <option value="Breda">
-                <option value="Brunyola i Sant Martí Sapresa">
-                <option value="Cabanelles">
-                <option value="Cabanes">
-                <option value="Cadaqués">
-                <option value="Caldes de Malavella">
-                <option value="Calonge i Sant Antoni">
-                <option value="Camós">
-                <option value="Campdevànol">
-                <option value="Campelles">
-                <option value="Campllong">
-                <option value="Camprodon">
-                <option value="Canet d'Adri">
-                <option value="Cantallops">
-                <option value="Capmany">
-                <option value="Cassà de la Selva">
-                <option value="Castellfollit de la Roca">
-                <option value="Castelló d'Empúries">
-                <option value="Castell-Platja d'Aro">
-                <option value="Cellera de Ter, La">
-                <option value="Celrà">
-                <option value="Cervià de Ter">
-                <option value="Cistella">
-                <option value="Colera">
-                <option value="Colomers">
-                <option value="Corçà">
-                <option value="Cornellà del Terri">
-                <option value="Crespià">
-                <option value="Cruïlles, Monells i Sant Sadurní de l'Heura">
-                <option value="Darnius">
-                <option value="Das">
-                <option value="El Far d'Empordà">
-                <option value="Escala, L'">
-                <option value="Espinelves">
-                <option value="Espolla">
-                <option value="Esponellà">
-                <option value="Figueres">
-                <option value="Flaçà">
-                <option value="Foixà">
-                <option value="Fontanals de Cerdanya">
-                <option value="Fontanilles">
-                <option value="Fontcoberta">
-                <option value="Forallac">
-                <option value="Fornells de la Selva">
-                <option value="Fortià">
-                <option value="Garrigàs">
-                <option value="Garrigoles">
-                <option value="Garriguella">
-                <option value="Ger">
-                <option value="Girona">
-                <option value="Gombrèn">
-                <option value="Gualta">
-                <option value="Guils de Cerdanya">
-                <option value="Hostalric">
-                <option value="Isòvol">
-                <option value="Juià">
-                <option value="La Pera">
-                <option value="La Jonquera">
-                <option value="La Bisbal d'Empordà">
-                <option value="Les Planes d'Hostoles">
-                <option value="Lladó">
-                <option value="Llagostera">
-                <option value="Llambilles">
-                <option value="Llanars">
-                <option value="Llançà">
-                <option value="Llers">
-                <option value="Llívia">
-                <option value="Lloret de Mar">
-                <option value="Llosses, Les">
-                <option value="Maçanet de Cabrenys">
-                <option value="Maçanet de la Selva">
-                <option value="Madremanya">
-                <option value="Maià de Montcal">
-                <option value="Masarac">
-                <option value="Massanes">
-                <option value="Meranges">
-                <option value="Mieres">
-                <option value="Mollet de Peralada">
-                <option value="Molló">
-                <option value="Montagut i Oix">
-                <option value="Mont-ras">
-                <option value="Navata">
-                <option value="Ogassa">
-                <option value="Olot">
-                <option value="Ordis">
-                <option value="Osor">
-                <option value="Palafrugell">
-                <option value="Palamós">
-                <option value="Palau de Santa Eulàlia">
-                <option value="Palau-sator">
-                <option value="Palau-saverdera">
-                <option value="Palol de Revardit">
-                <option value="Pals">
-                <option value="Pardines">
-                <option value="Parlavà">
-                <option value="Pau">
-                <option value="Pedret i Marzà">
-                <option value="Peralada">
-                <option value="Planoles">
-                <option value="Pont de Molins">
-                <option value="Pontós">
-                <option value="Porqueres">
-                <option value="Port de la Selva, El">
-                <option value="Portbou">
-                <option value="Preses, Les">
-                <option value="Puigcerdà">
-                <option value="Quart">
-                <option value="Queralbs">
-                <option value="Rabós">
-                <option value="Regencós">
-                <option value="Ribes de Freser">
-                <option value="Riells i Viabrea">
-                <option value="Ripoll">
-                <option value="Riudarenes">
-                <option value="Riudaura">
-                <option value="Riudellots de la Selva">
-                <option value="Riumors">
-                <option value="Roses">
-                <option value="Rupià">
-                <option value="Sales de Llierca">
-                <option value="Salt">
-                <option value="Sant Andreu Salou">
-                <option value="Sant Aniol de Finestres">
-                <option value="Sant Climent Sescebes">
-                <option value="Sant Feliu de Buixalleu">
-                <option value="Sant Feliu de Guíxols">
-                <option value="Sant Feliu de Pallerols">
-                <option value="Sant Ferriol">
-                <option value="Sant Gregori">
-                <option value="Sant Hilari Sacalm">
-                <option value="Sant Jaume de Llierca">
-                <option value="Sant Joan de les Abadesses">
-                <option value="Sant Joan de Mollet">
-                <option value="Sant Joan les Fonts">
-                <option value="Sant Jordi Desvalls">
-                <option value="Sant Julià de Ramis">
-                <option value="Sant Julià del Llor i Bonmatí">
-                <option value="Sant Llorenç de la Muga">
-                <option value="Sant Martí de Llémena">
-                <option value="Sant Martí Vell">
-                <option value="Sant Miquel de Campmajor">
-                <option value="Sant Miquel de Fluvià">
-                <option value="Sant Mori">
-                <option value="Sant Pau de Segúries">
-                <option value="Sant Pere Pescador">
-                <option value="Santa Coloma de Farners">
-                <option value="Santa Cristina d'Aro">
-                <option value="Santa Llogaia d'Àlguema">
-                <option value="Santa Pau">
-                <option value="Sarrià de Ter">
-                <option value="Saus, Camallera i Llampaies">
-                <option value="Selva de Mar, La">
-                <option value="Serinyà">
-                <option value="Serra de Daró">
-                <option value="Setcases">
-                <option value="Sils">
-                <option value="Siurana">
-                <option value="Susqueda">
-                <option value="Tallada d'Empordà, La">
-                <option value="Terrades">
-                <option value="Torrent">
-                <option value="Torroella de Fluvià">
-                <option value="Torroella de Montgrí">
-                <option value="Tortellà">
-                <option value="Toses">
-                <option value="Tossa de Mar">
-                <option value="Ullà">
-                <option value="Ullastret">
-                <option value="Ultramort">
-                <option value="Urús">
-                <option value="Vajol, La">
-                <option value="Vall de Bianya, La">
-                <option value="Vall d'en Bas, La">
-                <option value="Vallfogona de Ripollès">
-                <option value="Vall-llobrega">
-                <option value="Ventalló">
-                <option value="Verges">
-                <option value="Vidrà">
-                <option value="Vidreres">
-                <option value="Vilabertran">
-                <option value="Vilablareix">
-                <option value="Viladamat">
-                <option value="Viladasens">
-                <option value="Vilademuls">
-                <option value="Vilaf">
-                <option value="Vilafant">
-                <option value="Vilajuïga">
-                <option value="Vilallonga de Ter">
-                <option value="Vilamacolum">
-                <option value="Vilamalla">
-                <option value="Vilamaniscle">
-                <option value="Vilanant">
-                <option value="Vila-sacra">
-                <option value="Vilaür">
-                <option value="Vilobí d'Onyar">
-                <option value="Vilopriu">
+                        
+                
         </datalist>
                 
 
-            <section id="fotos">
-                <img src="./mdi/norte.png" alt="Norte" id="parpadeante">
-                <img src="./mdi/sur.png" alt="Sur" id="parpadeanteSur">
-            </section>
-    
-        
-        <section id="seccion-mensaje">
-              <p id="mensaje"> <span id="localidad"></span>  <span id="zona"></span></p>
         </section>
- </section>
-        
+
+      
+
+            <section id="fotos">
+            
+            <img src="./mdi/norte.png" alt="Norte" id="parpadeante">
+            <img src="./mdi/sur.png" alt="Sur" id="parpadeanteSur">
+            
+            </section>
+
+        <section >
+              <span class="seccion-mensaje" id="mensaje"> Bienvenid@ al buscador de coordenadas, empieze cuando quiera<span id="localidad"></span>  <span id="zona"></span></span>
+
+        </section>
 
         
-        <section id="minimapaGirona">
-            <img src="./mdi/mapaGirona.jpg" alt="mapaSur" id="mapaGirona">
+
         </section>
-    
+
+    </section>
+
+        <span id="contenedor-listado"></span>
+        <script src="./JS/index.js"></script>
+
     </body>
     
    
