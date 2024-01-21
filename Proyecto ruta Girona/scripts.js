@@ -1,225 +1,134 @@
+const listaUsuario = []
+const todasLasPoblaciones = [
+    "Agullana", "Aiguaviva", "Albanyà", "Albons", "Alp", "Amer", "Anglès", "Arbúcies", "Argelaguer", "Armentera",
+    "Avinyonet de Puigventós", "Banyoles", "Bàscara", "Begur", "Bellcaire d'Empordà", "Besalú", "Bescanó", "Beuda",
+    "Biure", "Blanes", "Boadella i les Escaules", "Bolvir", "Bordils", "Borrassà", "Breda", "Brunyola i Sant Martí Sapresa",
+    "Cabanelles", "Cabanes", "Cadaqués", "Caldes de Malavella", "Calonge i Sant Antoni", "Camós", "Campdevànol", "Campelles",
+    "Campllong", "Camprodon", "Canet d'Adri", "Cantallops", "Capmany", "Cassà de la Selva", "Castellfollit de la Roca",
+    "Castelló d'Empúries", "Castell-Platja d'Aro", "Cellera de Ter, La", "Celrà", "Cervià de Ter", "Cistella", "Colera",
+    "Colomers", "Corçà", "Cornellà del Terri", "Crespià", "Cruïlles, Monells i Sant Sadurní de l'Heura", "Darnius", "Das",
+    "El Far d'Empordà", "Escala, L'", "Espinelves", "Espolla", "Esponellà", "Figueres", "Flaçà", "Foixà", "Fontanals de Cerdanya",
+    "Fontanilles", "Fontcoberta", "Forallac", "Fornells de la Selva", "Fortià", "Garrigàs", "Garrigoles", "Garriguella", "Ger",
+    "Girona", "Gombrèn", "Gualta", "Guils de Cerdanya", "Hostalric", "Isòvol", "Juià", "La Pera", "La Jonquera", "La Bisbal d'Empordà",
+    "Les Planes d'Hostoles", "Lladó", "Llanars", "Llançà", "Llers", "Llívia", "Lloret de Mar", "Llosses, Les", "Maçanet de Cabrenys",
+    "Maçanet de la Selva", "Madremanya", "Maià de Montcal", "Masarac", "Meranges", "Mieres", "Mollet de Peralada", "Molló",
+    "Montagut i Oix", "Mont-ras", "Navata", "Ogassa", "Olot", "Ordis", "Osor", "Palafrugell", "Palamós", "Palau de Santa Eulàlia",
+    "Palau-sator", "Palau-saverdera", "Palol de Revardit", "Pals", "Pardines", "Parlavà", "Pau", "Pedret i Marzà", "Peralada",
+    "Planoles", "Pont de Molins", "Pontós", "Porqueres", "Port de la Selva, El", "Portbou", "Preses, Les", "Puigcerdà", "Quart",
+    "Queralbs", "Rabós", "Regencós", "Ribes de Freser", "Riells i Viabrea", "Ripoll", "Riudarenes", "Riudaura", "Riudellots de la Selva",
+    "Riumors", "Roses", "Rupià", "Sales de Llierca", "Salt", "Sant Andreu Salou", "Sant Aniol de Finestres", "Sant Climent Sescebes",
+    "Sant Feliu de Buixalleu", "Sant Feliu de Guíxols", "Sant Feliu de Pallerols", "Sant Ferriol", "Sant Gregori", "Sant Hilari Sacalm",
+    "Sant Jaume de Llierca", "Sant Joan de les Abadesses", "Sant Joan de Mollet", "Sant Joan les Fonts", "Sant Jordi Desvalls",
+    "Sant Julià de Ramis", "Sant Julià del Llor i Bonmatí", "Sant Llorenç de la Muga", "Sant Martí de Llémena", "Sant Martí Vell",
+    "Sant Miquel de Campmajor", "Sant Miquel de Fluvià", "Sant Mori", "Sant Pau de Segúries", "Sant Pere Pescador", "Santa Coloma de Farners",
+    "Santa Cristina d'Aro", "Santa Llogaia d'Àlguema", "Santa Pau", "Sarrià de Ter", "Saus, Camallera i Llampaies", "Selva de Mar, La",
+    "Serinyà", "Serra de Daró", "Setcases", "Sils", "Siurana", "Susqueda", "Tallada d'Empordà, La", "Terrades", "Torrent",
+    "Torroella de Fluvià", "Torroella de Montgrí", "Tortellà", "Toses", "Tossa de Mar", "Ullà", "Ullastret", "Ultramort", "Urús",
+    "Vajol, La", "Vall de Bianya, La", "Vall d'en Bas, La", "Vallfogona de Ripollès", "Vall-llobrega", "Ventalló", "Verges", "Vidrà",
+    "Vidreres", "Vilabertran", "Vilablareix", "Viladamat", "Viladasens", "Vilademuls", "Vilaf", "Vilafant", "Vilajuïga", "Vilallonga de Ter",
+    "Vilamacolum", "Vilamalla", "Vilamaniscle", "Vilanant", "Vila-sacra", "Vilaür", "Vilobí d'Onyar", "Vilopriu"
+  ];
+  
+
+const poblacionesNorte = [
+    "Begur", "Cadaqués", "Llançà", "Girona", "Amer", "Celrá", "La Jonquera", "La Bisbal d'Empordà",
+    "Sant Sadurní de l'Heura", "Sant Joan de Mollet", "Palau-saverdera", "Vilajuiga", "Roses",
+    "Peralada", "Figueres", "Banyoles", "Cornellà del Terri", "Sant Gregori", "Salt",
+    "Torroella de Montgrí", "La Pera", "Pals", "Agullana", "Albanyà", "Alp", "Albons", "Argelaguer",
+    "Armentera", "Avinyonet de Puigventós", "Bàscara", "Besalú", "Bellcaire d'Empordà", "Beuda",
+    "Biure", "Boadella i les Escaules", "Bolvir", "Bordils", "Borrassà", "Cabanelles", "Cabanes",
+    "Cadaqués", "Camós", "Campdevànol", "Campelles", "Camprodon", "Canet d'Adri", "Cantallops", "Capmany",
+    "Castellfollit de la Roca", "Castelló d'Empúries", "Celrà", "Cervià de Ter", "Cistella", "Colera",
+    "Colomers", "Cornellà del Terri", "Crespià", "Darnius", "Das", "El Far d'Empordà", "Escala, L'",
+    "Espolla", "Esponellà", "Figueres", "Flaçà", "Foixà", "Fontanals de Cerdanya", "Fontanilles",
+    "Fontcoberta", "Fortià", "Garrigàs", "Garrigoles", "Garriguella", "Ger", "Girona", "Gombrèn", "Gualta",
+    "Guils de Cerdanya", "Isòvol", "Juià", "La Pera", "La Jonquera", "La Bisbal d'Empordà", "Les Planes d'Hostoles",
+    "Lladó", "Llanars", "Llançà", "Llers", "Llívia", "Llosses, Les", "Maçanet de Cabrenys", "Madremanya",
+    "Maià de Montcal", "Masarac", "Meranges", "Mieres", "Mollet de Peralada", "Molló", "Montagut i Oix", "Navata",
+    "Ogassa", "Olot", "Ordis", "Palau de Santa Eulàlia", "Palau-sator", "Palau-saverdera", "Palol de Revardit",
+    "Pardines", "Parlavà", "Pau", "Pedret i Marzà", "Peralada", "Planoles", "Pont de Molins", "Pontós", "Porqueres",
+    "Port de la Selva, El", "Portbou", "Preses, Les", "Puigcerdà", "Queralbs", "Rabós", "Regencós", "Ribes de Freser",
+    "Ripoll", "Sales de Llierca", "Riudaura", "Sant Aniol de Finestres", "Riumors", "Roses", "Rupià",
+    "Sant Climent Sescebes", "Sant Feliu de Pallerols", "Sant Gregori", "Sant Jaume de Llierca", "Sant Joan de les Abadesses",
+    "Sant Joan de Mollet", "Sant Joan les Fonts", "Sant Jordi Desvalls", "Sant Julià de Ramis", "Sant Llorenç de la Muga",
+    "Sant Martí de Llémena", "Sant Martí Vell", "Sant Miquel de Campmajor", "Sant Miquel de Fluvià", "Sant Mori",
+    "Sant Pau de Segúries", "Sant Pere Pescador", "Saus, Camallera i Llampaies", "Santa Llogaia d'Àlguema", "Santa Pau",
+    "Sarrià de Ter", "Selva de Mar, La", "Serinyà", "Tallada d'Empordà, La", "Serra de Daró", "Torroella de Fluvià",
+    "Setcases", "Torroella de Montgrí", "Vallfogona de Ripollès", "Siurana", "Susqueda", "Terrades", "Vall d'en Bas, La",
+    "Vall de Bianya, La", "Tortellà", "Toses", "Ullastret", "Ullà", "Ultramort", "Urús", "Vajol, La", "Vilallonga de Ter",
+    "Ventalló", "Vilamacolum", "Verges", "Vidrà", "Vilaür", "Vilabertran", "Vilamaniscle", "Vilademuls", "Viladamat",
+    "Vilajuïga", "Viladasens", "Vila-sacra", "Vilopriu", "Vilafant", "Vilamalla", "Vilanant"
+];
+
+todasLasPoblaciones.forEach((pueblo) => {
+    let datalistPueblos = document.getElementById("poblaciones")
+    let crearLista = `<option value="${pueblo}"> `
+    datalistPueblos.innerHTML += crearLista
+    
+})
+    
 function obtenerTexto() {
+    let poblacionInput = document.getElementsByName("poblacion")[0];
+    let poblacionDefinida = poblacionInput.value;
+    let zona = "Sur"
 
-var poblacionInput = document.getElementsByName("poblacion")[0];
-var poblacionDefinida = poblacionInput.value;
+        for (let index = 0; index < poblacionesNorte.length; index++) {
+            if (poblacionDefinida === poblacionesNorte[index]) {
+                zona = "Norte"
+                break;
+            }       
+      }
 
-let zona = ""
+      if (zona === "Norte") {
+        hacerParpadear()
+    } else if (zona === "Sur") {
+        hacerParpadearSur()
+    }
 
+      let parrafo = document.getElementById("mensaje")
+      parrafo.innerHTML = "La población  " + poblacionDefinida + " pertenece a la zona: " + zona
 
-
-if (
-poblacionDefinida === "Begur" ||
-poblacionDefinida === "Cadaqués" ||
-poblacionDefinida === "Llançà" ||
-poblacionDefinida === "Girona" ||
-poblacionDefinida === "Amer" ||
-poblacionDefinida === "Celrá" ||
-poblacionDefinida === "La Jonquera" ||
-poblacionDefinida === "La Bisbal d'Empordà" ||
-poblacionDefinida === "Sant Sadurní de l'Heura" ||
-poblacionDefinida === "Sant Joan de Mollet" ||
-poblacionDefinida === "Palau-saverdera" ||
-poblacionDefinida === "Vilajuiga" ||
-poblacionDefinida === "Roses" ||
-poblacionDefinida === "Peralada" ||
-poblacionDefinida === "Figueres" ||
-poblacionDefinida === "Banyoles" ||
-poblacionDefinida === "Cornellà del Terri" ||
-poblacionDefinida === "Sant Gregori" ||
-poblacionDefinida === "Salt" ||
-poblacionDefinida === "Torroella de Montgrí" ||
-poblacionDefinida === "La Pera" ||
-poblacionDefinida === "Pals"    ||
-poblacionDefinida === "Agullana" ||
-poblacionDefinida === "Albanyà" ||
-poblacionDefinida === "Alp" ||
-poblacionDefinida === "Albons" ||
-poblacionDefinida === "Argelaguer" ||
-poblacionDefinida === "Armentera" ||
-poblacionDefinida === "Avinyonet de Puigventós" ||
-poblacionDefinida === "Bàscara" ||
-poblacionDefinida === "Besalú" ||
-poblacionDefinida === "Bellcaire d'Empordà" ||
-poblacionDefinida === "Beuda" ||
-poblacionDefinida === "Biure" ||
-poblacionDefinida === "Boadella i les Escaules" ||
-poblacionDefinida === "Bolvir" ||
-poblacionDefinida === "Bordils" ||
-poblacionDefinida === "Borrassà" ||
-poblacionDefinida === "Cabanelles" ||
-poblacionDefinida === "Cabanes" ||
-poblacionDefinida === "Cadaqués" ||
-poblacionDefinida === "Camós" ||
-poblacionDefinida === "Campdevànol" ||
-poblacionDefinida === "Campelles" ||
-poblacionDefinida === "Camprodon" ||
-poblacionDefinida === "Canet d'Adri" ||
-poblacionDefinida === "Cantallops" ||
-poblacionDefinida === "Capmany" ||
-poblacionDefinida === "Castellfollit de la Roca" ||
-poblacionDefinida === "Castelló d'Empúries" ||
-poblacionDefinida === "Celrà" ||
-poblacionDefinida === "Cervià de Ter" ||
-poblacionDefinida === "Cistella" ||
-poblacionDefinida === "Colera" ||
-poblacionDefinida === "Colomers" ||
-poblacionDefinida === "Cornellà del Terri" ||
-poblacionDefinida === "Crespià" ||
-poblacionDefinida === "Darnius" ||
-poblacionDefinida === "Das" ||
-poblacionDefinida === "El Far d'Empordà" ||
-poblacionDefinida === "Escala, L'" ||
-poblacionDefinida === "Espolla" ||
-poblacionDefinida === "Esponellà" ||
-poblacionDefinida === "Figueres" ||
-poblacionDefinida === "Flaçà" ||
-poblacionDefinida === "Foixà" ||
-poblacionDefinida === "Fontanals de Cerdanya" ||
-poblacionDefinida === "Fontanilles" ||
-poblacionDefinida === "Fontcoberta" ||
-poblacionDefinida === "Fortià" ||
-poblacionDefinida === "Garrigàs" ||
-poblacionDefinida === "Garrigoles" ||
-poblacionDefinida === "Garriguella" ||
-poblacionDefinida === "Ger" ||
-poblacionDefinida === "Girona" ||
-poblacionDefinida === "Gombrèn" ||
-poblacionDefinida === "Gualta" ||
-poblacionDefinida === "Guils de Cerdanya" ||
-poblacionDefinida === "Isòvol" ||
-poblacionDefinida === "Juià" ||
-poblacionDefinida === "La Pera" ||
-poblacionDefinida === "La Jonquera" ||
-poblacionDefinida === "La Bisbal d'Empordà" ||
-poblacionDefinida === "Les Planes d'Hostoles" ||
-poblacionDefinida === "Lladó" ||
-poblacionDefinida === "Llanars" ||
-poblacionDefinida === "Llançà" ||
-poblacionDefinida === "Llers" ||
-poblacionDefinida === "Llívia" ||
-poblacionDefinida === "Llosses, Les" ||
-poblacionDefinida === "Maçanet de Cabrenys" ||
-poblacionDefinida === "Madremanya" ||
-poblacionDefinida === "Maià de Montcal" ||
-poblacionDefinida === "Masarac" ||
-poblacionDefinida === "Meranges" ||
-poblacionDefinida === "Mieres" ||
-poblacionDefinida === "Mollet de Peralada" ||
-poblacionDefinida === "Molló" ||
-poblacionDefinida === "Montagut i Oix" ||
-poblacionDefinida === "Navata" ||
-poblacionDefinida === "Ogassa" ||
-poblacionDefinida === "Olot" ||
-poblacionDefinida === "Ordis" ||
-poblacionDefinida === "Palau de Santa Eulàlia" ||
-poblacionDefinida === "Palau-sator" ||
-poblacionDefinida === "Palau-saverdera" ||
-poblacionDefinida === "Palol de Revardit" ||
-poblacionDefinida === "Pardines" ||
-poblacionDefinida === "Parlavà" ||
-poblacionDefinida === "Pau" ||
-poblacionDefinida === "Pedret i Marzà" ||
-poblacionDefinida === "Peralada" ||
-poblacionDefinida === "Planoles" ||
-poblacionDefinida === "Pont de Molins" ||
-poblacionDefinida === "Pontós" ||
-poblacionDefinida === "Porqueres" ||
-poblacionDefinida === "Port de la Selva, El" ||
-poblacionDefinida === "Portbou" ||
-poblacionDefinida === "Preses, Les" ||
-poblacionDefinida === "Puigcerdà" ||
-poblacionDefinida === "Queralbs" ||
-poblacionDefinida === "Rabós" ||
-poblacionDefinida === "Regencós" ||
-poblacionDefinida === "Ribes de Freser" ||
-poblacionDefinida === "Ripoll" ||
-poblacionDefinida === "Sales de Llierca" ||
-poblacionDefinida === "Riudaura" ||
-poblacionDefinida === "Sant Aniol de Finestres" ||
-poblacionDefinida === "Riumors" ||
-poblacionDefinida === "Roses" ||
-poblacionDefinida === "Rupià" ||
-poblacionDefinida === "Sant Climent Sescebes" ||
-poblacionDefinida === "Sant Feliu de Pallerols" ||
-poblacionDefinida === "Sant Gregori" ||
-poblacionDefinida === "Sant Jaume de Llierca" ||
-poblacionDefinida === "Sant Joan de les Abadesses" ||
-poblacionDefinida === "Sant Joan de Mollet" ||
-poblacionDefinida === "Sant Joan les Fonts" ||
-poblacionDefinida === "Sant Jordi Desvalls" ||
-poblacionDefinida === "Sant Julià de Ramis" ||
-poblacionDefinida === "Sant Llorenç de la Muga" ||
-poblacionDefinida === "Sant Martí de Llémena" ||
-poblacionDefinida === "Sant Martí Vell" ||
-poblacionDefinida === "Sant Miquel de Campmajor" ||
-poblacionDefinida === "Sant Miquel de Fluvià" ||
-poblacionDefinida === "Sant Mori" ||
-poblacionDefinida === "Sant Pau de Segúries" ||
-poblacionDefinida === "Sant Pere Pescador" ||
-poblacionDefinida === "Saus, Camallera i Llampaies" ||
-poblacionDefinida === "Santa Llogaia d'Àlguema" ||
-poblacionDefinida === "Santa Pau" ||
-poblacionDefinida === "Sarrià de Ter" ||
-poblacionDefinida === "Selva de Mar, La" ||
-poblacionDefinida === "Serinyà" ||
-poblacionDefinida === "Tallada d'Empordà, La" ||
-poblacionDefinida === "Serra de Daró" ||
-poblacionDefinida === "Torroella de Fluvià" ||
-poblacionDefinida === "Setcases" ||
-poblacionDefinida === "Torroella de Montgrí" ||
-poblacionDefinida === "Vallfogona de Ripollès" ||
-poblacionDefinida === "Siurana" ||
-poblacionDefinida === "Susqueda" ||
-poblacionDefinida === "Terrades" ||
-poblacionDefinida === "Vall d'en Bas, La" ||
-poblacionDefinida === "Vall de Bianya, La" ||
-poblacionDefinida === "Tortellà" ||
-poblacionDefinida === "Toses" ||
-poblacionDefinida === "Ullastret" ||
-poblacionDefinida === "Ullà" ||
-poblacionDefinida === "Ultramort" ||
-poblacionDefinida === "Urús" ||
-poblacionDefinida === "Vajol, La" ||
-poblacionDefinida === "Vilallonga de Ter" ||
-poblacionDefinida === "Ventalló" ||
-poblacionDefinida === "Vilamacolum" ||
-poblacionDefinida === "Verges" ||
-poblacionDefinida === "Vidrà" ||
-poblacionDefinida === "Vilaür" ||
-poblacionDefinida === "Vilabertran" ||
-poblacionDefinida === "Vilamaniscle" ||
-poblacionDefinida === "Vilademuls" ||
-poblacionDefinida === "Viladamat" ||
-poblacionDefinida === "Vilajuïga" ||
-poblacionDefinida === "Viladasens" ||
-poblacionDefinida === "Vila-sacra" ||
-poblacionDefinida === "Vilopriu" ||
-poblacionDefinida === "Vilafant" ||
-poblacionDefinida === "Vilamalla" ||
-poblacionDefinida === "Vilanant"
-) { zona = "Norte"; hacerParpadear()
-
-} else  {
-zona = "Sur"
-hacerParpadearSur()
-} 
-
-let parrafo = document.getElementById("mensaje")
-parrafo.innerHTML = "La población  " + poblacionDefinida + " pertenece a la zona: " + zona
+      listaUsuario.push(poblacionInput.value)
+      
+      
 }
+ 
+    function hacerParpadear() {
+    const imagen = document.getElementById("parpadeante")
+    imagen.classList.add('blinking-image');
+    setTimeout(() => {
+      imagen.classList.remove('blinking-image');
+    }, 3000);
+    }
 
+    function hacerParpadearSur() {
+    const imagen = document.getElementById("parpadeanteSur")
+    imagen.classList.add('blinking-image');
+    setTimeout(() => {
+      imagen.classList.remove('blinking-image');
+    }, 3000);
+}
+    
+    let contenedorListado = document.getElementById("contenedor-listado")
 
-function hacerParpadear() {
-const imagen = document.getElementById("parpadeante")
-imagen.classList.add('blinking-image');
-setTimeout(() => {
-  imagen.classList.remove('blinking-image');
-}, 3000);
-}
-function hacerParpadearSur() {
-const imagen = document.getElementById("parpadeanteSur")
-imagen.classList.add('blinking-image');
-setTimeout(() => {
-  imagen.classList.remove('blinking-image');
-}, 3000);
-}
+    function crearListaVisual() {
+
+        let crearListado = ""
+        listaUsuario.forEach((poblacion) => {
+
+            crearListado =  `<p> ${poblacion} </p>
+            <button onClick="borrarPoblacion()">X</button>`
+                
+            })
+            
+            console.log(poblacion)
+            contenedorListado.innerHTML += crearListado
+
+        }
+                
+            
+    
+
+    
+   
+    
